@@ -13,6 +13,7 @@ export default function Homepage() {
     event.preventDefault();
     let provider = new fb.auth.GoogleAuthProvider();
     provider.addScope('profile');
+    //provider.addScope('https://www.googleapis.com/auth/gmail.readonly')
 
     let result = await firebase.auth().signInWithPopup(provider);
     console.log(result);
