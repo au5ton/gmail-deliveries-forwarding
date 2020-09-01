@@ -6,7 +6,7 @@ import Header from '../header/header';
 const Homepage = React.lazy(() => import('../homepage/homepage'));
 
 import '../../styles/base.scss';
-//import '../../styles/colors.scss';
+import '../../styles/colors.scss';
 
 export default function Root() {
   return (

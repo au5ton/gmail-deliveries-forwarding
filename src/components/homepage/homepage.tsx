@@ -1,15 +1,30 @@
 import React, { Suspense } from 'react';
 
+import { default as fb } from 'firebase/app';
+import firebase from '../../util/firebase';
 const Footer = React.lazy(() => import('../footer/footer'));
 
 //import './homepage.scss';
 
 export default function Homepage() {
+
+  async function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    event.preventDefault();
+    let provider = new fb.auth.GoogleAuthProvider();
+    provider.addScope('profile');
+    
+    let result = await firebase.auth().signInWithPopup(provider);
+    console.log(result);
+  }
+
   return (
     <>
       <main>
         <r-grid columns="8">
           <r-cell span="row">
+            <p>
+              <a className="button" href="#" onClick={handleClick}>Hello, World</a>
+            </p>
             <p>
               Aenean fringilla velit sit amet elit fringilla pulvinar. Donec eu
               elit et nulla ultrices mollis a ut nulla. Duis laoreet quam ante,
