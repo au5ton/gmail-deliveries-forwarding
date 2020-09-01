@@ -12,9 +12,10 @@ export default function Footer() {
     <footer>
       <h6>gmail-deliveries-forwarding</h6>
       <p>
-        Version: {import.meta.env.SNOWPACK_PUBLIC_VERSION}, Commit: {typeof commitHash === 'string'
-            ? commitHash.substring(0, 7)
-            : commitHash}
+        Version: {import.meta.env.SNOWPACK_PUBLIC_VERSION}, Commit:{' '}
+        {typeof commitHash === 'string'
+          ? commitHash.substring(0, 7)
+          : commitHash}
         <br />
         Build date:{' '}
         <span
