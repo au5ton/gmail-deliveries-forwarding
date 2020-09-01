@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-
 const config = {
   apiKey: import.meta.env.SNOWPACK_PUBLIC_APIKEY,
   appId: import.meta.env.SNOWPACK_PUBLIC_APPID,
@@ -13,4 +12,6 @@ const config = {
   storageBucket: import.meta.env.SNOWPACK_PUBLIC_STORAGEBUCKET,
 };
 
-export default !firebase.apps.length ? firebase.initializeApp(config) : firebase.app();
+export default !firebase.apps.length
+  ? firebase.initializeApp(config)
+  : firebase.app();
