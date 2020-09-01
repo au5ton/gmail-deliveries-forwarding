@@ -1,0 +1,14 @@
+{
+  "extends": "@snowpack/app-scripts-react",
+  "install": [
+    "react-router",
+    "react-router-dom",
+    "@exampledev/new.css"
+  ],
+  "scripts": {
+    "build:scss": "sass $FILE"
+  },
+  "plugins": [
+    ["@snowpack/plugin-webpack", { "sourceMap": true }]
+  ]
+}
